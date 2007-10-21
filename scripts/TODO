@@ -1,0 +1,15 @@
+- Check printRuas.asp:
+  http://urbs-web.curitiba.pr.gov.br/centro/printRuas.asp?codLinha=461&nl=AGUA%20CLARA
+  (trajeto de ida / trajeto de volta)
+
+- Linhas que integram:
+  http://urbs-web.curitiba.pr.gov.br/centro/exibelinha.asp?codigoponto=TERM039
+
+
+** Lista de pontos:
+   - Min: http://urbs-web.curitiba.pr.gov.br/centro/lista_linhas.asp?codseg=''&pontos=PTO0001173
+   - Max: http://urbs-web.curitiba.pr.gov.br/centro/lista_linhas.asp?codseg=''&pontos=PTO0004882
+   - Não!
+     - Exists: http://urbs-web.curitiba.pr.gov.br/centro/lista_linhas.asp?codseg=''&pontos=PTO0009000
+     - Max: http://urbs-web.curitiba.pr.gov.br/centro/lista_linhas.asp?codseg=''&pontos=PTO00012000
+     - ?
