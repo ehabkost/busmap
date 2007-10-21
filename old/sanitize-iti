@@ -1,0 +1,11 @@
+#!/bin/sh
+
+sed -n -e "
+/<option/{
+	s@<option value='[^']*'>\([^<]*\)</option>@\1\n@g
+	s@^[ \t]*@@
+	s@@@
+	/^$/d
+	p
+}
+"

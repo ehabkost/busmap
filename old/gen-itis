@@ -1,0 +1,14 @@
+#!/bin/sh
+set -e
+
+for arq in raw/iti/*.htm;do
+	cod=$(basename "$arq" .htm)
+	nome="$(grep "^$cod " lista-itin.txt | sed -e 's/^[^ ]* //')"
+	(echo "Itinerário $nome<br>"
+		./gen-equivs.py "iti/$cod" "../" || exit 1
+		echo "<pre>"
+		./sanitize-iti < $arq
+		echo "</pre>"
+	) > pages/iti/${cod}.htm
+	echo done $arq
+done

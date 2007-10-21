@@ -1,0 +1,40 @@
+
+
+<html>
+<head>
+<title>conteudo_esq</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script language="JavaScript"><!--
+function checa()
+{
+	var txt = '';
+	for(i = 0; i < D1.options.length; i++)
+	{
+		if(D1.options[i].selected)
+			txt = D1.options[i].value;
+	}
+//	alert(txt);
+	vc = txt;
+	parent.frames['leftFrame'].dbMapa.m_linha(vc);
+}
+// --></script>
+</head>
+
+<body bgcolor="#330099" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<table width="90%" border="0" cellspacing="0" cellpadding="3" align="left" bgcolor="#FFFFFF">
+  <tr bgcolor="#330099"> 
+    <td><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><b><font color="#FFFFFF">Ruas 
+      por onde passa esta linha</font></b></font></td>
+  </tr>
+  <tr> 
+    <td bgcolor="#330099"> 
+      <p align="left"> 
+        <select name="D1"  size='10' style='font-family: Arial, Helvetica, sans-serif; font-size: 8pt'>
+          <option value='TERM007'>TERMINAL HAUER</option><option value='$S0260'>AV. MARECHAL FLORIANO PEIXOTO</option><option value='$S6160'>R. WALDEMAR KOST</option><option value='$S6170'>R. PROFESSOR JOAO SOARES BARCELOS</option><option value='$C8881'>ROD. BR-116</option><option value='$S2760'>R. ALBINO BEATRIZ</option><option value='$S2530'>R. OMILIO MONTEIRO SOARES</option><option value='$S2740'>R. ANTONIO BARIQUELO</option><option value='$S2510'>R. MAJOR VICENTE DE CASTRO</option><option value='$S2700'>R. CORONEL IZALTINO PINHO</option><option value='$S2490'>R. MAESTRO FRANCISCO ANTONELLO</option><option value='$S2360'>R. BRASILIO RIBAS</option><option value='$S1570'>R. CLARA POLSIN</option><option value='$S1500'>AV. BRASILIA</option><option value='$S1630'>R. PEDRO COSTA CUNHA</option><option value='$S161A'>R. PEDRO BONAT</option><option value='$S150A'>R. IRMAS PAULINAS</option><option value='$S153C'>R. ANDRE JOAO GASPARIN</option><option value='TERM003'>TERMINAL CAPÃO RASO</option><option value='$S155B'>R. CATARINA SCOTTI</option><option value='$S1570'>R. CLARA POLSIN</option><option value='$S2360'>R. BRASILIO RIBAS</option><option value='$S2490'>R. MAESTRO FRANCISCO ANTONELLO</option><option value='$S2700'>R. CORONEL IZALTINO PINHO</option><option value='$S2510'>R. MAJOR VICENTE DE CASTRO</option><option value='$S2740'>R. ANTONIO BARIQUELO</option><option value='$C8881'>ROD. BR-116</option><option value='$S6150'>R. OLIVEIRA VIANA</option><option value='$S6040'>R. MAJOR FABRICIANO DO REGO BARROS</option><option value='$S6170'>R. PROFESSOR JOAO SOARES BARCELOS</option><option value='$S6140'>R. ALCINO GUANABARA</option> 
+        </select>
+      </p>
+      </td>
+  </tr>
+</table>
+</body>
+</html>

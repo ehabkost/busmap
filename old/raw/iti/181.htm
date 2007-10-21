@@ -1,0 +1,40 @@
+
+
+<html>
+<head>
+<title>conteudo_esq</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script language="JavaScript"><!--
+function checa()
+{
+	var txt = '';
+	for(i = 0; i < D1.options.length; i++)
+	{
+		if(D1.options[i].selected)
+			txt = D1.options[i].value;
+	}
+//	alert(txt);
+	vc = txt;
+	parent.frames['leftFrame'].dbMapa.m_linha(vc);
+}
+// --></script>
+</head>
+
+<body bgcolor="#330099" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<table width="90%" border="0" cellspacing="0" cellpadding="3" align="left" bgcolor="#FFFFFF">
+  <tr bgcolor="#330099"> 
+    <td><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><b><font color="#FFFFFF">Ruas 
+      por onde passa esta linha</font></b></font></td>
+  </tr>
+  <tr> 
+    <td bgcolor="#330099"> 
+      <p align="left"> 
+        <select name="D1"  size='10' style='font-family: Arial, Helvetica, sans-serif; font-size: 8pt'>
+          <option value='TERM004'>TERMINAL SITIO CERCADO</option><option value='$S461S'>R. PIONEIROS, DOS</option><option value='$S4500'>R. DOUTOR LEVY BUQUERA</option><option value='$S4330'>R. IZAAC FERREIRA DA CRUZ</option><option value='$S463D'>R. CIDADE DE OURO</option><option value='$S561T'>R. DAVID TOWS</option><option value='$S4670'>R. DOUTOR LAURO GENTIO P. TAVARES</option><option value='$S472H'>R. CORONEL JOAQUIM ANTONIO DE AZEVEDO</option><option value='$S4730'>R. NOVA AURORA</option><option value='$S561T'>R. DAVID TOWS</option><option value='$S4750'>R. OURIZONA</option><option value='$S4710'>R. LUPIONOPOLIS</option><option value='$S4460'>R. SAO JOSE DOS PINHAIS</option><option value='$S4330'>R. IZAAC FERREIRA DA CRUZ</option><option value='$S448M'>R. PLANALTO</option><option value='$S461S'>R. PIONEIROS, DOS</option> 
+        </select>
+      </p>
+      </td>
+  </tr>
+</table>
+</body>
+</html>

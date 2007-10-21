@@ -1,0 +1,40 @@
+
+
+<html>
+<head>
+<title>conteudo_esq</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script language="JavaScript"><!--
+function checa()
+{
+	var txt = '';
+	for(i = 0; i < D1.options.length; i++)
+	{
+		if(D1.options[i].selected)
+			txt = D1.options[i].value;
+	}
+//	alert(txt);
+	vc = txt;
+	parent.frames['leftFrame'].dbMapa.m_linha(vc);
+}
+// --></script>
+</head>
+
+<body bgcolor="#330099" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<table width="90%" border="0" cellspacing="0" cellpadding="3" align="left" bgcolor="#FFFFFF">
+  <tr bgcolor="#330099"> 
+    <td><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><b><font color="#FFFFFF">Ruas 
+      por onde passa esta linha</font></b></font></td>
+  </tr>
+  <tr> 
+    <td bgcolor="#330099"> 
+      <p align="left"> 
+        <select name="D1"  size='10' style='font-family: Arial, Helvetica, sans-serif; font-size: 8pt'>
+          <option value='TERM006'>TERMINAL CARMO</option><option value='$S0260'>AV. MARECHAL FLORIANO PEIXOTO</option><option value='$S636C'>R. ITALINO PERUFFO</option><option value='$S6250'>R. TENENTE FRANCISCO FERREIRA DE SOUZA</option><option value='$S6380'>R. WALDEMAR LOUREIRO CAMPOS</option><option value='$S5270'>R. FRANCISCO DEROSSO</option><option value='$S5680'>R. AYRTON PIZZATTO GUSI</option><option value='$S561T'>R. DAVID TOWS</option><option value='$S5660'>R. JOAO BATISTA ZAGONEL PASSOS</option><option value='$S5340'>R. BERNARDO MANN</option><option value='$S5660'>R. JOAO BATISTA ZAGONEL PASSOS</option><option value='$S561T'>R. DAVID TOWS</option><option value='$S5680'>R. AYRTON PIZZATTO GUSI</option><option value='$S5270'>R. FRANCISCO DEROSSO</option><option value='$S6380'>R. WALDEMAR LOUREIRO CAMPOS</option><option value='$S6250'>R. TENENTE FRANCISCO FERREIRA DE SOUZA</option><option value='$S634C'>R. JOSEPHA DEREN DESTEFANI</option> 
+        </select>
+      </p>
+      </td>
+  </tr>
+</table>
+</body>
+</html>

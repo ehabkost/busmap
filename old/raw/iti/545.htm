@@ -1,0 +1,40 @@
+
+
+<html>
+<head>
+<title>conteudo_esq</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script language="JavaScript"><!--
+function checa()
+{
+	var txt = '';
+	for(i = 0; i < D1.options.length; i++)
+	{
+		if(D1.options[i].selected)
+			txt = D1.options[i].value;
+	}
+//	alert(txt);
+	vc = txt;
+	parent.frames['leftFrame'].dbMapa.m_linha(vc);
+}
+// --></script>
+</head>
+
+<body bgcolor="#330099" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<table width="90%" border="0" cellspacing="0" cellpadding="3" align="left" bgcolor="#FFFFFF">
+  <tr bgcolor="#330099"> 
+    <td><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><b><font color="#FFFFFF">Ruas 
+      por onde passa esta linha</font></b></font></td>
+  </tr>
+  <tr> 
+    <td bgcolor="#330099"> 
+      <p align="left"> 
+        <select name="D1"  size='10' style='font-family: Arial, Helvetica, sans-serif; font-size: 8pt'>
+          <option value='PCA001'>PRAÇA RUI BARBOSA</option><option value='$C0040'>R. ANDRE DE BARROS</option><option value='$C0230'>R. JOAO NEGRAO</option><option value='$S0090'>R. BRASILIO ITIBERE</option><option value='$S0500'>AV. PREFEITO OMAR SABBAG</option><option value='$S013J'>R. TUFIK JOSE GUERIOS</option><option value='$S046B'>R. MAURICIO NUNES GARCIA</option><option value='$S015J'>R. PASCHOAL BORDIGNON</option><option value='$S050F'>AV. PROFESSOR LOTHARIO MEISSNER</option><option value='$C7770'>ROD. BR-277 CURITIBA PARANAGUA</option><option value='$S8220'>R. CORONEL FRANCISCO H. DOS SANTOS</option><option value='$S8190'>AV. NOSSA SENHORA DE LOURDES</option><option value='$S8350'>R. PROFESSOR JOAO DOETZER</option><option value='$S8610'>R. CAPITAO LEONIDAS MARQUES</option><option value='$S858B'>R. AUGUSTO STEEMBOCK</option><option value='$S8730'>R. ARTHUR JOSE NISIO</option><option value='$S856B'>R. FRANCISCO DRESSLER</option><option value='$S8770'>R. ALBERTO PASQUALINI</option><option value='$S879A'>R. ZACARIAS GOMES DE SOUZA</option><option value='$S879B'>R. DEPUTADO TENORIO CAVALCANTI</option><option value='$S850N'>R. ATILIO PIOTO</option><option value='$S9700'>R. ALFREDO BARCIK</option><option value='$S955J'>R. RIVADAVIA FONSECA DE MACEDO</option><option value='$S9740'>R. JOAO TOBIAS DE PAIVA NETTO</option><option value='$S979L'>R. LIRIO-DO-VALE</option><option value='$S9800'>R. ANTONIO MOREIRA LOPES</option><option value='$C7770'>ROD. BR-277 CURITIBA PARANAGUA</option><option value='$S846D'>R. PROFESSORA MARIA DA GLORIA SALDANHA LOYOLA</option><option value='$S8610'>R. CAPITAO LEONIDAS MARQUES</option><option value='$S8350'>R. PROFESSOR JOAO DOETZER</option><option value='$S8190'>AV. NOSSA SENHORA DE LOURDES</option><option value='$S810A'>R. MARCOS SMANHOTTO</option><option value='$S912C'>R. HEITOR QUINTEIRO</option><option value='$S906C'>R. SAO BARTOLOMEU</option><option value='$S910C'>R. SAO VICENTE PALLOTTI</option><option value='$C7770'>ROD. BR-277 CURITIBA PARANAGUA</option><option value='$S050F'>AV. PROFESSOR LOTHARIO MEISSNER</option><option value='$S015J'>R. PASCHOAL BORDIGNON</option><option value='$S046B'>R. MAURICIO NUNES GARCIA</option><option value='$S013J'>R. TUFIK JOSE GUERIOS</option><option value='$S0500'>AV. PREFEITO OMAR SABBAG</option><option value='$S011J'>R. ERNESTO DE ARAUJO</option><option value='$S050B'>R. CORONEL JOAO DA SILVA SAMPAIO</option><option value='$S009J'>R. SANT'ANA</option><option value='$S0500'>AV. PREFEITO OMAR SABBAG</option><option value='$S0070'>R. ENGENHEIROS REBOUCAS</option><option value='$C0250'>R. CONSELHEIRO LAURINDO</option><option value='$C0020'>AV. VISCONDE DE GUARAPUAVA</option><option value='$S0260'>AV. MARECHAL FLORIANO PEIXOTO</option> 
+        </select>
+      </p>
+      </td>
+  </tr>
+</table>
+</body>
+</html>

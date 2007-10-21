@@ -1,0 +1,40 @@
+
+
+<html>
+<head>
+<title>conteudo_esq</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script language="JavaScript"><!--
+function checa()
+{
+	var txt = '';
+	for(i = 0; i < D1.options.length; i++)
+	{
+		if(D1.options[i].selected)
+			txt = D1.options[i].value;
+	}
+//	alert(txt);
+	vc = txt;
+	parent.frames['leftFrame'].dbMapa.m_linha(vc);
+}
+// --></script>
+</head>
+
+<body bgcolor="#330099" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<table width="90%" border="0" cellspacing="0" cellpadding="3" align="left" bgcolor="#FFFFFF">
+  <tr bgcolor="#330099"> 
+    <td><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><b><font color="#FFFFFF">Ruas 
+      por onde passa esta linha</font></b></font></td>
+  </tr>
+  <tr> 
+    <td bgcolor="#330099"> 
+      <p align="left"> 
+        <select name="D1"  size='10' style='font-family: Arial, Helvetica, sans-serif; font-size: 8pt'>
+          <option value='$N068A'>R. SANTO AFONSO DE LIGORIO</option><option value='$N0700'>AV. ANITA GARIBALDI</option><option value='$N042E'>R. SANTA RITA DE CASSIA</option><option value='$N0530'>R. SAO SEBASTIAO</option><option value='$N0440'>R. MARECHAL MALLET</option><option value='$N0470'>R. MANOEL EUFRASIO</option><option value='$N0540'>R. MARECHAL HERMES</option><option value='$N002C'>R. PREFEITO ROSALVO GOMES MELLO LEITAO</option><option value='$N0410'>R. PROFESSOR BENEDITO NICOLAU DOS SANTOS</option><option value='$N0060'>R. CANDIDO DE ABREU</option><option value='$C017K'>R. BARAO DO SERRO AZUL</option><option value='$C018J'>TV. NESTOR DE CASTRO</option><option value='$C0180'>CJ. ACUCENA</option><option value='$C0130'>R. EBANO PEREIRA</option><option value='$C014I'>R. CRUZ MACHADO</option><option value='$C0150'>AL. DOUTOR MURICY</option><option value='PCA001'>PRAÇA RUI BARBOSA</option><option value='$S0220'>R. ALFERES POLI</option><option value='$C0020'>AV. VISCONDE DE GUARAPUAVA</option><option value='$W0110'>R. FRANCISCO ROCHA</option><option value='$C2500'>AV. SETE DE SETEMBRO</option><option value='$W8310'>R. SAO LEOPOLDO</option><option value='$W804L'>R. JAIME VEIGA</option><option value='$W831B'>R. RUY VIRMOND CARNASCIALI</option><option value='$W804K'>R. HARRY BLAS GOMM</option><option value='$W8310'>R. SAO LEOPOLDO</option><option value='$W8000'>R. GENERAL MARIO TOURINHO</option><option value='$W033C'>R. PROFESSOR JOAO ARGEMIRO LOYOLA</option><option value='$S0010'>AV. SILVA JARDIM</option><option value='$S0260'>AV. MARECHAL FLORIANO PEIXOTO</option><option value='PCA002'>PRAÇA TIRADENTES</option><option value='$C014J'>TV. TOBIAS DE MACEDO</option><option value='$C021L'>R. RIACHUELO</option><option value='PCA005'>PRAÇA 19 DE DEZEMBRO</option><option value='$C1000'>AV. JOAO GUALBERTO</option><option value='$N0040'>R. HEITOR STOCKLER DE FRANCA</option><option value='$N0060'>R. CANDIDO DE ABREU</option><option value='$N0370'>R. ERNANI SANTIAGO DE OLIVEIRA</option><option value='$N002C'>R. PREFEITO ROSALVO GOMES MELLO LEITAO</option><option value='$N0540'>R. MARECHAL HERMES</option><option value='$N0470'>R. MANOEL EUFRASIO</option><option value='$N0440'>R. MARECHAL MALLET</option><option value='$N0530'>R. SAO SEBASTIAO</option><option value='$N042E'>R. SANTA RITA DE CASSIA</option><option value='$N0700'>AV. ANITA GARIBALDI</option><option value='$N0680'>R. CORONEL AMAZONAS MARCONDES</option> 
+        </select>
+      </p>
+      </td>
+  </tr>
+</table>
+</body>
+</html>

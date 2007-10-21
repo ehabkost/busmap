@@ -1,0 +1,40 @@
+
+
+<html>
+<head>
+<title>conteudo_esq</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script language="JavaScript"><!--
+function checa()
+{
+	var txt = '';
+	for(i = 0; i < D1.options.length; i++)
+	{
+		if(D1.options[i].selected)
+			txt = D1.options[i].value;
+	}
+//	alert(txt);
+	vc = txt;
+	parent.frames['leftFrame'].dbMapa.m_linha(vc);
+}
+// --></script>
+</head>
+
+<body bgcolor="#330099" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<table width="90%" border="0" cellspacing="0" cellpadding="3" align="left" bgcolor="#FFFFFF">
+  <tr bgcolor="#330099"> 
+    <td><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><b><font color="#FFFFFF">Ruas 
+      por onde passa esta linha</font></b></font></td>
+  </tr>
+  <tr> 
+    <td bgcolor="#330099"> 
+      <p align="left"> 
+        <select name="D1"  size='10' style='font-family: Arial, Helvetica, sans-serif; font-size: 8pt'>
+          <option value='TERM003'>TERMINAL CAPÃO RASO</option><option value='$S153C'>R. ANDRE JOAO GASPARIN</option><option value='$W1290'>R. FRANCISCO ADER</option><option value='$W100D'>R. ANTONIO GASPARIN</option><option value='$W1370'>R. PEDRO GUSSO</option><option value='TERM017'>TERMINAL CIC</option><option value='$W6390'>R. DESEMBARGADOR CID CAMPELO</option><option value='$W4700'>R. VICENTE MICHELOTTO</option><option value='$C555E'>AV. JUSCELINO KUBITSCHEK DE OLIVEIRA</option><option value='$W4200'>R. CYRO CORREIA PEREIRA</option><option value='$W4250'>R. RODOLPHO HATSCHBACH</option><option value='$W4300'>R. PAUL GARFUNKEL</option><option value='$W4150'>R. EMILIO ROMANI</option><option value='$W4300'>R. PAUL GARFUNKEL</option><option value='$W4250'>R. RODOLPHO HATSCHBACH</option><option value='$W4200'>R. CYRO CORREIA PEREIRA</option><option value='$C555E'>AV. JUSCELINO KUBITSCHEK DE OLIVEIRA</option><option value='$W4700'>R. VICENTE MICHELOTTO</option><option value='$W1670'>R. JOSE RODRIGUES PINHEIRO</option><option value='$W4050'>R. JOAO CHEDE</option><option value='$W6390'>R. DESEMBARGADOR CID CAMPELO</option><option value='$W1370'>R. PEDRO GUSSO</option><option value='$W532M'>R. SAO SEVERINO</option><option value='$W5530'>R. LEA MOREIRA DE SOUZA MOURA</option><option value='TERM017'>TERMINAL CIC</option><option value='$W1370'>R. PEDRO GUSSO</option><option value='$W104D'>R. PAULINA ADER</option><option value='$W1310'>R. DEPUTADO WALDEMIRO PEDROSO</option><option value='$S155B'>R. CATARINA SCOTTI</option> 
+        </select>
+      </p>
+      </td>
+  </tr>
+</table>
+</body>
+</html>

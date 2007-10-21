@@ -1,0 +1,40 @@
+
+
+<html>
+<head>
+<title>conteudo_esq</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script language="JavaScript"><!--
+function checa()
+{
+	var txt = '';
+	for(i = 0; i < D1.options.length; i++)
+	{
+		if(D1.options[i].selected)
+			txt = D1.options[i].value;
+	}
+//	alert(txt);
+	vc = txt;
+	parent.frames['leftFrame'].dbMapa.m_linha(vc);
+}
+// --></script>
+</head>
+
+<body bgcolor="#330099" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<table width="90%" border="0" cellspacing="0" cellpadding="3" align="left" bgcolor="#FFFFFF">
+  <tr bgcolor="#330099"> 
+    <td><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><b><font color="#FFFFFF">Ruas 
+      por onde passa esta linha</font></b></font></td>
+  </tr>
+  <tr> 
+    <td bgcolor="#330099"> 
+      <p align="left"> 
+        <select name="D1"  size='10' style='font-family: Arial, Helvetica, sans-serif; font-size: 8pt'>
+          <option value='TERM001'>TERMINAL PINHEIRINHO</option><option value='$C3020'>AV. WINSTON CHURCHILL</option><option value='$C8881'>ROD. BR-116</option><option value='$C555W'>AV. JUSCELINO KUBITSCHEK DE OLIVEIRA</option><option value='$W4200'>R. CYRO CORREIA PEREIRA</option><option value='$C555E'>AV. JUSCELINO KUBITSCHEK DE OLIVEIRA</option><option value='$W4750'>R. WIEGANDO OLSEN</option><option value='$C3330'>ROD. BR-476</option><option value='$AR10H'>ROD. DO XISTO BR - 476 (ARAUCÁRIA)</option><option value='$AR18D'>R. VER. ABILIO FRUET (ARAUCÁRIA)</option><option value='$AR79G'>AV. DR. VICTOR DO AMARAL (ARAUCÁRIA)</option><option value='$AR01L'>R. DIOGENES B. LOBATO (ARAUCÁRIA)</option><option value='$AR14D'>R. JORGE A. MANSUR (ARAUCÁRIA)</option><option value='$AR83E'>R. JULIO SZYMANSKI (ARAUCÁRIA)</option><option value='$AR03V'>R. PRES. CARLOS CAVALCANTI (ARAUCÁRIA)</option><option value='$AR61G'>R. CORONEL JOÃO ANTÔNIO XAVIER (ARAUCÁRIA)</option><option value='$AR00D'>R. PROF° ALFREDO PARODI (ARAUCÁRIA)</option><option value='$AR03S'>AV. ARCHELAU DE ALMEIDA TORRES (ARAUCÁRIA)</option><option value='$AR79G'>AV. DR. VICTOR DO AMARAL (ARAUCÁRIA)</option><option value='$AR18D'>R. VER. ABILIO FRUET (ARAUCÁRIA)</option><option value='$AR10H'>ROD. DO XISTO BR - 476 (ARAUCÁRIA)</option><option value='$C3330'>ROD. BR-476</option><option value='$W4990'>R. ROBERTO OZORIO DE ALMEIDA</option><option value='$W4770'>R. JOAO LUNARDELLI</option><option value='$W4790'>R. HASDRUBAL BELLEGARD</option><option value='$C3330'>ROD. BR-476</option><option value='$C5551'>AV. JUSCELINO KUBITSCHEK DE OLIVEIRA</option><option value='$C8882'>ROD. BR-116</option><option value='$S4330'>R. IZAAC FERREIRA DA CRUZ</option><option value='$S404H'>R. JOAO LAERTES BOCHNIA</option><option value='$S4310'>R. EMILE ZOLA</option><option value='$C8881'>ROD. BR-116</option><option value='$C3020'>AV. WINSTON CHURCHILL</option><option value='$W1710'>R. LEON NICOLAS</option><option value='$S202A'>R. ANDRE FERREIRA BARBOSA</option><option value='$W1630'>R. JOAO RODRIGUES PINHEIRO</option> 
+        </select>
+      </p>
+      </td>
+  </tr>
+</table>
+</body>
+</html>

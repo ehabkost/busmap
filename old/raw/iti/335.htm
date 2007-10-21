@@ -1,0 +1,40 @@
+
+
+<html>
+<head>
+<title>conteudo_esq</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script language="JavaScript"><!--
+function checa()
+{
+	var txt = '';
+	for(i = 0; i < D1.options.length; i++)
+	{
+		if(D1.options[i].selected)
+			txt = D1.options[i].value;
+	}
+//	alert(txt);
+	vc = txt;
+	parent.frames['leftFrame'].dbMapa.m_linha(vc);
+}
+// --></script>
+</head>
+
+<body bgcolor="#330099" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<table width="90%" border="0" cellspacing="0" cellpadding="3" align="left" bgcolor="#FFFFFF">
+  <tr bgcolor="#330099"> 
+    <td><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><b><font color="#FFFFFF">Ruas 
+      por onde passa esta linha</font></b></font></td>
+  </tr>
+  <tr> 
+    <td bgcolor="#330099"> 
+      <p align="left"> 
+        <select name="D1"  size='10' style='font-family: Arial, Helvetica, sans-serif; font-size: 8pt'>
+          <option value='TERM004'>TERMINAL SITIO CERCADO</option><option value='$S4330'>R. IZAAC FERREIRA DA CRUZ</option><option value='$S5270'>R. FRANCISCO DEROSSO</option><option value='$C8881'>ROD. BR-116</option><option value='$S6170'>R. PROFESSOR JOAO SOARES BARCELOS</option><option value='$S602H'>R. SONIA MARIA</option><option value='$S6150'>R. OLIVEIRA VIANA</option><option value='$C8881'>ROD. BR-116</option><option value='$S226A'>R. HELLEN KELLER</option><option value='$S253B'>R. JOAQUIM FRANCO DOS ANJOS</option><option value='$S1500'>AV. BRASILIA</option><option value='$S5270'>R. FRANCISCO DEROSSO</option><option value='$S4330'>R. IZAAC FERREIRA DA CRUZ</option><option value='TERM004'>TERMINAL SITIO CERCADO</option> 
+        </select>
+      </p>
+      </td>
+  </tr>
+</table>
+</body>
+</html>
