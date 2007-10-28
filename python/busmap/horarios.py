@@ -6,6 +6,10 @@ def dbg(msg):
 	#print msg
 	pass
 
+ENCODING = 'iso-8859-1'
+def upage(s):
+	return unicode(s, ENCODING)
+
 MAIN_PAGE = 'http://www.curitiba.pr.gov.br/Servicos/Transporte/HorarioOnibus/ctba.asp'
 def url_horario(cod):
 	return 'http://www.curitiba.pr.gov.br/Servicos/Transporte/HorarioOnibus/HorariosOnibusUrbano.asp?LINHA='+cod
@@ -15,7 +19,7 @@ re_item_lista = re.compile(u"""<OPTION VALUE='(.*?)'>.*?<FONT .*?>(.*?)</FONT>""
 
 def lista_linhas():
 	dbg('Fetching main page...')
-	f = env.urlopener.open(MAIN_PAGE)
+	f = env.url_opener.open(MAIN_PAGE)
 	s = f.read()
 	for cod,nome in re_item_lista.findall(s):
 		nome = nome.rstrip()
@@ -25,10 +29,11 @@ def lista_linhas():
 
 def get_horarios_html(cod):
 	#print 'Getting schedules for %s' % (cod)
-	f = env.urlopener.open(url_horario(cod))
+	f = env.url_opener.open(url_horario(cod))
 	return f.read()
 
-re_ponto = re.compile("""Ponto:(.*?)- (.*?)</small>.*?partir de: (.*?)</small>.*?<table.*?<table.*?>(.*?)</table>.*?</table>""", re.IGNORECASE|re.MULTILINE|re.DOTALL)
+re_ponto = re.compile("""Ponto:(.*?)</small>.*?partir de: (.*?)</small>.*?<table.*?<table.*?>(.*?)</table>.*?</table>""", re.IGNORECASE|re.MULTILINE|re.DOTALL)
+re_pdias = re.compile("""^(.*)- (.*)$""")
 re_horario = re.compile("""<font .*?>(|<b><u>)([0-9]*:[0-9]*)""", re.IGNORECASE)
 
 def parse_hor_html(html):
@@ -37,9 +42,11 @@ def parse_hor_html(html):
 			b = len(bold) > 0
 			yield b,h
 		
-	for ponto,dias,apartir,hor in re_ponto.findall(html):
-		ponto = ponto.strip()
-		dias = dias.strip()
+	for ponto,apartir,hor in re_ponto.findall(html):
+		m = re_pdias.match(ponto)
+		assert m is not None
+		ponto = upage(m.group(1).strip())
+		dias = upage(m.group(2).strip())
 		yield ponto,dias,apartir,parse_ponto(hor)
 
 if __name__ == '__main__':
