@@ -79,5 +79,5 @@ def fetch_hor_all():
 		fetch_horarios(cod, nome)
 
 if __name__ == '__main__':
-	fetch_horarios('022', u'INTER 2 (Horário)')
-	#fetch_hor_all()
+	#fetch_horarios('022', u'INTER 2 (Horário)')
+	fetch_hor_all()
