@@ -10,6 +10,7 @@ f_linhas = [
 	('id',      'int(20)', PRIMARY_KEY|AUTOINC),
 	('iditi',   'varchar(16)',   CAN_NULL),
 	('idhor',   'varchar(16)',   CAN_NULL),
+	('shortname','varchar(32)',  CAN_NULL),
 	('nome',    'varchar(32)',   0),
 ]
 
