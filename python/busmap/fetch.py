@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*
 
-import horarios, linhas, env
+import horarios, linhas, env, dias
 
 
 def get_linha_hor(idhor, nome):
@@ -41,14 +41,6 @@ def get_ponto_hor(nome):
 	c.close()
 	return id
 
-def id_dias(s):
-	d = {
-		u'Dias úteis':0,
-		u'Sábados':1,
-		u'Domingo / Feriado':2,
-	}
-	return d[s]
-
 def fetch_horarios(idhor, nome):
 	c = env.db.cursor()
 
@@ -63,7 +55,7 @@ def fetch_horarios(idhor, nome):
 	for pto,dias,apartir,horas in horarios.parse_hor_html(html):
 		print 'ponto: %s, dias: %s' % (pto, dias)
 		idponto = get_ponto_hor(pto)
-		d = id_dias(dias)
+		d = dias.id_dias(dias)
 		c.insert_one('horsets', idlinha=idlinha, idponto=idponto,
 			dia=d, apartir=apartir)
 		idset = c.lastrowid
