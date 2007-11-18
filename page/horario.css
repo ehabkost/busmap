@@ -1,0 +1,32 @@
+.ponto {
+	background-color: #f0f0f0;
+	color: black;
+	border-top: thin solid #aaa;
+	padding: 0.5em;
+	margin: 2em;
+	width: 50%;
+}
+
+h1 {
+	font-size: 150%;
+}
+
+h2 {
+	font-size: 125%;
+}
+
+h3 {
+	font-size: 100%;
+}
+
+.hor {
+	border: thin solid black;
+	padding-left: 1em;
+	padding-right: 1em;
+	font-family: monospace;
+}
+
+.hor b {
+	font-weight: normal;
+	color: #800;
+}
