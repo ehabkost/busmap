@@ -46,23 +46,31 @@ def fetch_horarios(idhor, nome):
 
 	idlinha = get_linha_hor(idhor, nome)
 
-	c.execute('delete from hs, h \
-		using horsets hs, horarios h \
-		where hs.idlinha=%s and h.idset=hs.id',
-		[idlinha])
+	#TODO: check if this really works
+	c.execute('start transaction')
 
-	html = horarios.get_horarios_html(idhor)
-	for pto,dia,apartir,horas in horarios.parse_hor_html(html):
-		print 'ponto: %s, dias: %s' % (pto, dia)
-		idponto = get_ponto_hor(pto)
-		d = dias.id_dias(dia)
-		c.insert_one('horsets', idlinha=idlinha, idponto=idponto,
-			dia=d, apartir=apartir)
-		idset = c.lastrowid
-		for sp,h in horas:
-			c.insert_one('horarios',
-				idset=idset, hora=h, special=sp)
+	try:
+		c.execute('delete from hs, h \
+			using horsets hs, horarios h \
+			where hs.idlinha=%s and h.idset=hs.id',
+			[idlinha])
 
+		html = horarios.get_horarios_html(idhor)
+		for pto,dia,apartir,horas in horarios.parse_hor_html(html):
+			print 'ponto: %s, dias: %s' % (pto, dia)
+			idponto = get_ponto_hor(pto)
+			d = dias.id_dias(dia)
+			c.insert_one('horsets', idlinha=idlinha, idponto=idponto,
+				dia=d, apartir=apartir)
+			idset = c.lastrowid
+			for sp,h in horas:
+				c.insert_one('horarios',
+					idset=idset, hora=h, special=sp)
+
+	except:
+		c.execute('rollback')
+	else:
+		c.execute('commit')
 	c.close()
 
 def fetch_hor_all():
