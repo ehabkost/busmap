@@ -53,36 +53,36 @@ class MostraLinha(HtmlPageHandler, BusmapHandler):
 	def htmlbody(self):
 		c1 = self.env.db.cursor()
 		c2 = self.env.db.cursor()
+
 		yield rh('<h1>Linha: %s</h1>' % (us(self.nomelinha)))
-		try:
-			c1.execute("select hs.id,pt.nome,hs.dia,hs.apartir from \
-				horsets as hs left join pontos pt on pt.id=hs.idponto \
-				where idlinha=%s \
-				order by pt.nome,hs.dia", [self.idlinha])
-			lastpt = None
-			for idhs,ponto,dia,apartir in c1.fetchall():
-				c2.exec_select('horarios', ['hora', 'special'],
-					'idset=%s', [idhs], order='hora')
-				#FIXME: nome ponto
-				if ponto <> lastpt:
-					if lastpt is not None:
-						yield rh('</div>')  # ponto
-					yield rh('<div class="ponto">')
-					yield rh('<h2>Ponto: %s</h2>') % (us(ponto))
-				#FIXME: destacar dia de hoje
-				yield rh('<div class="dia">') 
-				yield rh('<h3>Dia: %s</h3>') % (us(dias.desc_dia(dia)))
-				yield rh('<div class="hor">')
-				for hora,sp in c2.fetchall():
-					if sp: p,s = '<b>', '</b>'
-					else: p,s = '',''
-					yield rh(' %s%s%s ') % (rh(p), us(hora), rh(s))
-				yield rh('</div>') # hor
-				yield rh('</div>') # dia
-				lastpt = ponto
-		finally:
-			c1.close()
-			c2.close()
+		c1.execute("select hs.id,pt.nome,hs.dia,hs.apartir from \
+			horsets as hs left join pontos pt on pt.id=hs.idponto \
+			where idlinha=%s \
+			order by pt.nome,hs.dia", [self.idlinha])
+		lastpt = None
+		for idhs,ponto,dia,apartir in c1.fetchall():
+			c2.exec_select('horarios', ['hora', 'special'],
+				'idset=%s', [idhs], order='hora')
+			#FIXME: nome ponto
+			if ponto <> lastpt:
+				if lastpt is not None:
+					yield rh('</div>')  # ponto
+				yield rh('<div class="ponto">')
+				yield rh('<h2>Ponto: %s</h2>') % (us(ponto))
+			#FIXME: destacar dia de hoje
+			yield rh('<div class="dia">') 
+			yield rh('<h3>Dia: %s</h3>') % (us(dias.desc_dia(dia)))
+			yield rh('<div class="hor">')
+			for hora,sp in c2.fetchall():
+				if sp: p,s = '<b>', '</b>'
+				else: p,s = '',''
+				yield rh(' %s%s%s ') % (rh(p), us(hora), rh(s))
+			yield rh('</div>') # hor
+			yield rh('</div>') # dia
+			lastpt = ponto
+
+		c1.close()
+		c2.close()
 
 m = multiplexHandler
 c = classHandler
