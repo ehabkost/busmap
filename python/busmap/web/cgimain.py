@@ -93,7 +93,7 @@ handler = m({
 		},
 		c(MostraLinha)),
 },
-UnknownHandler)
+c(UnknownHandler))
 
 import busmap.env as env
 import sys
