@@ -8,8 +8,8 @@ def new_db(**kwargs):
 
 f_linhas = [
 	('id',      'int(20)', PRIMARY_KEY|AUTOINC),
-	('iditi',   'varchar(16)',   CAN_NULL),
-	('idhor',   'varchar(16)',   CAN_NULL),
+	('iditi',   'varchar(16)',   CAN_NULL|INDEXME),
+	('idhor',   'varchar(16)',   CAN_NULL|INDEXME),
 	('shortname','varchar(32)',  CAN_NULL|INDEXME),
 	('nome',    'varchar(32)',   INDEXME),
 ]
