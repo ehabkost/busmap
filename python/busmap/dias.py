@@ -6,8 +6,8 @@ DIAS = (
 	(2, u'Domingo / Feriado'),
 )
 
-d_cod2dia = dict([(c,n) for c,n in DIAS])
-d_dia2cod = dict(DIAS)
+d_cod2dia = dict(DIAS)
+d_dia2cod = dict([(n,c) for c,n in DIAS])
 
 def id_dias(s):
 	return d_dia2cod[s]
