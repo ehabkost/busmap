@@ -22,7 +22,7 @@ def lista_linhas():
 	f = env.url_opener.open(MAIN_PAGE)
 	s = f.read()
 	for cod,nome in re_item_lista.findall(s):
-		nome = nome.rstrip()
+		nome = upage(nome.rstrip())
 		dbg('Found list item: %s:%s' % (cod, nome))
 		yield cod,nome
 
