@@ -11,4 +11,4 @@ db = busmap.db.new_db(host='socdb.raisama.net',
 
 # the paths MUST end in /
 cgipath = '/cgi-bin/bus.cgi/'
-rootpath = '/'
+rootpath = '/bus/'
