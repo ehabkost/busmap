@@ -52,10 +52,10 @@ def fetch_horarios(idhor, nome):
 		[idlinha])
 
 	html = horarios.get_horarios_html(idhor)
-	for pto,dias,apartir,horas in horarios.parse_hor_html(html):
-		print 'ponto: %s, dias: %s' % (pto, dias)
+	for pto,dia,apartir,horas in horarios.parse_hor_html(html):
+		print 'ponto: %s, dias: %s' % (pto, dia)
 		idponto = get_ponto_hor(pto)
-		d = dias.id_dias(dias)
+		d = dias.id_dias(dia)
 		c.insert_one('horsets', idlinha=idlinha, idponto=idponto,
 			dia=d, apartir=apartir)
 		idset = c.lastrowid
