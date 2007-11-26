@@ -48,7 +48,7 @@ class MostraLinha(HtmlPageHandler, BusmapHandler):
 		return us('Linha: %s' % (self.nomelinha))
 
 	def morehead(self):
-		yield rh('<link rel="stylsheet" type="text/css" href="%shorario.css" />' % (self.env.rootpath))
+		yield rh('<link rel="stylesheet" type="text/css" href="%shorario.css" />' % (self.env.rootpath))
 
 	def htmlbody(self):
 		c1 = self.env.db.cursor()
