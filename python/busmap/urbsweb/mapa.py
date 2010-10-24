@@ -2,6 +2,9 @@
 import sys, os
 import urllib, urllib2
 import logging
+import pickle
+
+from busmap.urbsweb import lista_linhas
 
 logger = logging.getLogger('busmap.urbsweb.mapa')
 dbg = logger.debug
@@ -37,7 +40,7 @@ class MapFetcher(object):
 
         Returns a coordinate_data,image tuple.
         """
-        dbg('downloading map data for linha %d', linha)
+        dbg('downloading map data for linha %s', linha)
 
         ll = 441950 # arbitrary number. I expect to be able to reuse it on multiple requests
         url = self.coords_url(x, y, raio, ll, linha, URL_BASE)
@@ -62,13 +65,41 @@ class MapFetcher(object):
         image_file.write(image.read())
         image_file.close()
 
-    def save_initial_map(self, out_dir, linha):
-        dir = os.path.join(out_dir, 'mapdata/%d/initial' % (linha))
-        os.makedirs(dir)
+    def get_initial_map(self, out_dir, linha):
+        dir = os.path.join(out_dir, 'mapdata/%s/initial' % (linha))
+        done = os.path.join(dir, 'done')
+
+        if os.path.exists(done):
+            dbg('initial map for %s already fetched', linha)
+            return
+
+        if not os.path.isdir(dir):
+            os.makedirs(dir)
+
         self.save_map(0, 0, 250, linha, dir)
+        open(done, 'w').close()
 
 if __name__ == '__main__':
     logging.basicConfig(stream=sys.stderr, level=logging.DEBUG)
+    persist = sys.argv[1]
+    out = sys.argv[2]
+    tipolinha = sys.argv[3]
+
+    if os.path.exists(persist):
+        cache = pickle.load(open(persist, 'r'))
+    else:
+        cache = {}
+
+
+    ckey = 'linhas.%s' % (tipolinha)
+    if cache.has_key(ckey):
+        linhas = cache[ckey]
+    else:
+        linhas = list(lista_linhas(tipolinha))
+        cache[ckey] = linhas
+    pickle.dump(cache, open(persist, 'w'))
+
     mf = MapFetcher()
-    mf.save_initial_map('.', 20)
-    mf.save_initial_map('.', 21)
+    for cod,nome in linhas:
+        dbg('will fetch for %s: %s', cod, nome)
+        mf.get_initial_map(out, cod)
