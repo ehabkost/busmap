@@ -1,0 +1,18 @@
+Ponto: ESTACAO TUBO AUTODROMO - Dias úteis
+Valido a partir de: 12/02/2007
+
+07:00 07:07 07:15 07:22 07:30 07:37 07:45 
+
+
+Ponto: TERMINAL CAPAO DA IMBUIA - Dias úteis
+Valido a partir de: 12/02/2007
+
+07:10 07:17 07:25 07:32 07:40 17:36 17:47 17:58 18:09 18:20 18:31 18:42 18:53 
+
+
+Ponto: TERMINAL PINHAIS - Dias úteis
+Valido a partir de: 12/02/2007
+
+17:49 18:00 18:11 18:22 18:33 18:44 
+
+

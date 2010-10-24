@@ -1,0 +1,36 @@
+Ponto: COLOMBO (CAMBARA) - Dias úteis
+Valido a partir de: 23/07/2007
+
+*06:10 *09:30 *12:00 *15:30 *17:30 
+
+
+Ponto: COLOMBO (CAMBARA) - Sábados
+Valido a partir de: 21/07/2007
+
+*06:30 *09:30 *12:00 *15:30 *17:30 
+
+
+Ponto: COLOMBO (CAMBARA) - Domingo / Feriado
+Valido a partir de: 22/07/2007
+
+*06:30 *09:30 *12:00 *15:30 *17:30 
+
+
+Ponto: TERMINAL GUADALUPE - Dias úteis
+Valido a partir de: 23/07/2007
+
+*07:10 *10:30 *13:00 *16:30 *18:30 
+
+
+Ponto: TERMINAL GUADALUPE - Sábados
+Valido a partir de: 21/07/2007
+
+*07:30 *10:30 *13:00 *16:30 *18:30 
+
+
+Ponto: TERMINAL GUADALUPE - Domingo / Feriado
+Valido a partir de: 22/07/2007
+
+*07:30 *10:30 *13:00 *16:30 *18:30 
+
+

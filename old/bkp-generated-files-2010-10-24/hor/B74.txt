@@ -1,0 +1,24 @@
+Ponto: JARDIM CESAR AUGUSTO - Dias úteis
+Valido a partir de: 23/07/2007
+
+*05:45 *07:10 *11:10 *12:30 *15:35 *17:00 *18:30 
+
+
+Ponto: JARDIM CESAR AUGUSTO - Sábados
+Valido a partir de: 21/07/2007
+
+*05:45 *07:20 *12:30 *13:55 *15:25 *16:55 *18:20 
+
+
+Ponto: TERMINAL GUADALUPE - Dias úteis
+Valido a partir de: 23/07/2007
+
+*06:25 *07:50 *11:50 *13:10 *16:15 *17:40 *19:10 
+
+
+Ponto: TERMINAL GUADALUPE - Sábados
+Valido a partir de: 21/07/2007
+
+*06:25 *07:55 *13:10 *14:40 *16:10 *17:40 *18:50 
+
+

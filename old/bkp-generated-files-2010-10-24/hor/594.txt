@@ -1,0 +1,36 @@
+Ponto: BAIRRO NOVO - Dias úteis
+Valido a partir de: 01/06/2004
+
+*06:30 *08:20 *10:10 *12:00 *13:50 *15:40 *17:30 *19:20 *21:10 
+
+
+Ponto: BAIRRO NOVO - Sábados
+Valido a partir de: 05/06/2004
+
+*06:30 *08:20 *10:10 *12:00 *13:50 *15:40 *17:30 *19:20 
+
+
+Ponto: BAIRRO NOVO - Domingo / Feriado
+Valido a partir de: 06/06/2004
+
+*06:30 *08:20 *10:10 *12:00 *13:50 *15:40 *17:30 *19:20 
+
+
+Ponto: TERMINAL SITES - Dias úteis
+Valido a partir de: 01/06/2004
+
+*07:25 *09:15 *11:05 *12:55 *14:45 *16:35 *18:25 *20:15 *22:10 
+
+
+Ponto: TERMINAL SITES - Sábados
+Valido a partir de: 05/06/2004
+
+*07:25 *09:15 *11:05 *12:55 *14:45 *16:35 *18:25 *20:15 
+
+
+Ponto: TERMINAL SITES - Domingo / Feriado
+Valido a partir de: 06/06/2004
+
+*07:25 *09:15 *11:05 *12:55 *14:45 *16:35 *18:25 *20:15 
+
+

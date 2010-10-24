@@ -1,0 +1,42 @@
+Ponto: RUI BARBOSA/CHEGADA - Dias úteis
+Valido a partir de: 21/06/2004
+
+01:50 02:50 03:50 04:50 
+
+
+Ponto: RUI BARBOSA/CHEGADA - Sábados
+Valido a partir de: 19/06/2004
+
+01:50 02:50 03:50 04:50 
+
+
+Ponto: RUI BARBOSA/CHEGADA - Domingo / Feriado
+Valido a partir de: 30/10/2005
+
+01:50 02:20 02:50 03:20 03:50 04:20 04:50 
+
+
+Ponto: RUI BARBOSA/SAIDA - Dias úteis
+Valido a partir de: 21/06/2004
+
+01:10 02:00 03:00 04:00 05:00 
+
+
+Ponto: RUI BARBOSA/SAIDA - Sábados
+Valido a partir de: 19/06/2004
+
+01:10 02:00 03:00 04:00 05:00 
+
+
+Ponto: RUI BARBOSA/SAIDA - Domingo / Feriado
+Valido a partir de: 30/10/2005
+
+01:10 01:40 02:00 02:30 03:00 03:30 04:00 04:30 05:00 05:30 
+
+
+Ponto: TERMINAL CENTENARIO - Domingo / Feriado
+Valido a partir de: 30/10/2005
+
+05:00 
+
+

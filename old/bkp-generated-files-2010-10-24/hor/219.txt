@@ -1,0 +1,12 @@
+Ponto: BAIRRO COLINA - Dias úteis
+Valido a partir de: 08/01/2007
+
+07:11 07:33 07:56 16:45 17:15 17:45 18:15 
+
+
+Ponto: TERMINAL CABRAL - Dias úteis
+Valido a partir de: 08/01/2007
+
+06:56 07:18 07:41 08:04 17:03 17:33 18:03 
+
+

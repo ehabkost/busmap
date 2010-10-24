@@ -1,0 +1,48 @@
+Ponto: BAIRRO CAPAO DA IMBUIA - Dias úteis
+Valido a partir de: 26/03/2007
+
+*06:30 *08:30 *10:30 *12:30 *14:30 *16:30 
+
+
+Ponto: BAIRRO CAPAO DA IMBUIA - Sábados
+Valido a partir de: 22/10/2005
+
+*06:30 *08:30 *10:30 *12:30 *14:30 *16:30 
+
+
+Ponto: PARQUE BARIGUI - Dias úteis
+Valido a partir de: 26/03/2007
+
+*07:30 *09:30 *11:30 *13:30 *15:30 *17:40 
+
+
+Ponto: PARQUE BARIGUI - Sábados
+Valido a partir de: 22/10/2005
+
+*07:30 *09:30 *11:30 *13:30 *15:30 *17:30 
+
+
+Ponto: TERMINAL SITES ANTI-HORARIO - Dias úteis
+Valido a partir de: 26/03/2007
+
+*06:50 *08:50 *10:50 *12:50 *14:50 *16:55 
+
+
+Ponto: TERMINAL SITES ANTI-HORARIO - Sábados
+Valido a partir de: 22/10/2005
+
+*06:50 *08:50 *10:50 *12:50 *14:50 *16:50 
+
+
+Ponto: TERMINAL SITES HORARIO - Dias úteis
+Valido a partir de: 26/03/2007
+
+*08:10 *10:10 *12:10 *14:10 *16:10 *18:20 
+
+
+Ponto: TERMINAL SITES HORARIO - Sábados
+Valido a partir de: 22/10/2005
+
+*08:10 *10:10 *12:10 *14:10 *16:10 *18:10 
+
+

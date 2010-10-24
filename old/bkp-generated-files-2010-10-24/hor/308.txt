@@ -1,0 +1,36 @@
+Ponto: PRACA RUI BARBOSA - Dias úteis
+Valido a partir de: 24/09/2007
+
+05:20 24:40 
+
+
+Ponto: PRACA RUI BARBOSA - Sábados
+Valido a partir de: 31/07/2004
+
+05:30 24:40 
+
+
+Ponto: PRACA RUI BARBOSA - Domingo / Feriado
+Valido a partir de: 30/10/2005
+
+24:40 
+
+
+Ponto: TERMINAL CENTENARIO - Dias úteis
+Valido a partir de: 24/09/2007
+
+24:00 
+
+
+Ponto: TERMINAL CENTENARIO - Sábados
+Valido a partir de: 31/07/2004
+
+24:00 
+
+
+Ponto: TERMINAL CENTENARIO - Domingo / Feriado
+Valido a partir de: 30/10/2005
+
+24:00 
+
+

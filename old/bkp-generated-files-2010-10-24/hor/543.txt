@@ -1,0 +1,42 @@
+Ponto: KRAFT (SENT.S.CERCADO) - Dias úteis
+Valido a partir de: 14/03/2007
+
+05:37 
+
+
+Ponto: PONTO FINAL BR 116 - Dias úteis
+Valido a partir de: 14/03/2007
+
+06:00 06:30 07:00 07:30 17:05 17:30 18:05 18:30 19:00 
+
+
+Ponto: PONTO FINAL BR 116 - Sábados
+Valido a partir de: 18/07/1998
+
+07:00 
+
+
+Ponto: SITIO CERCADO SENTIDO KRAFT - Dias úteis
+Valido a partir de: 14/03/2007
+
+05:17 
+
+
+Ponto: TERMINAL BOQUEIRAO - Dias úteis
+Valido a partir de: 14/03/2007
+
+05:05 
+
+
+Ponto: TERMINAL SITIO CERCADO - Dias úteis
+Valido a partir de: 14/03/2007
+
+05:30 06:00 06:30 07:00 07:30 08:00 17:30 18:00 18:30 
+
+
+Ponto: TERMINAL SITIO CERCADO - Sábados
+Valido a partir de: 18/07/1998
+
+06:30 07:30 
+
+

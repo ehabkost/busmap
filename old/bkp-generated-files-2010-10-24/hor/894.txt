@@ -1,0 +1,24 @@
+Ponto: BAIRRO - Dias úteis
+Valido a partir de: 26/07/2007
+
+05:50 11:30 
+
+
+Ponto: ESCOLA 29 DE MARCO - Dias úteis
+Valido a partir de: 26/07/2007
+
+08:00 13:10 17:00 
+
+
+Ponto: ESCOLA M.JESUS (SEDE) - Dias úteis
+Valido a partir de: 26/07/2007
+
+08:10 13:20 17:15 
+
+
+Ponto: ESCOLA PRIMAVERA - Dias úteis
+Valido a partir de: 26/07/2007
+
+17:20 
+
+

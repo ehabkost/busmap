@@ -1,0 +1,36 @@
+Ponto: PRACA SANTOS ANDRADE - Dias úteis
+Valido a partir de: 25/07/2005
+
+01:00 03:00 
+
+
+Ponto: PRACA SANTOS ANDRADE - Sábados
+Valido a partir de: 23/07/2005
+
+01:00 03:00 
+
+
+Ponto: PRACA SANTOS ANDRADE - Domingo / Feriado
+Valido a partir de: 24/07/2005
+
+01:00 03:00 
+
+
+Ponto: TERMINAL PIRAQUARA - Dias úteis
+Valido a partir de: 25/07/2005
+
+00:15 02:00 
+
+
+Ponto: TERMINAL PIRAQUARA - Sábados
+Valido a partir de: 23/07/2005
+
+00:15 02:00 
+
+
+Ponto: TERMINAL PIRAQUARA - Domingo / Feriado
+Valido a partir de: 24/07/2005
+
+00:15 02:00 
+
+

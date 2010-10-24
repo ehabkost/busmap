@@ -1,0 +1,24 @@
+Ponto: BAIRRO - ECUMENICA 3           - Dias úteis
+Valido a partir de: 10/09/2007
+
+06:00 12:05 
+
+
+Ponto: ESCOLA ECUMENICA - SEDE        - Dias úteis
+Valido a partir de: 10/09/2007
+
+11:15 13:30 17:15 
+
+
+Ponto: ESCOLA ECUMENICA - SUB-SEDE    - Dias úteis
+Valido a partir de: 10/09/2007
+
+08:00 10:40 13:20 16:40 
+
+
+Ponto: ESCOLA M.STRESSER (USO) - Dias úteis
+Valido a partir de: 10/09/2007
+
+17:25 
+
+

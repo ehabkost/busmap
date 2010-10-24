@@ -1,0 +1,36 @@
+Ponto: BAIRRO PEDRO MORO - Dias úteis
+Valido a partir de: 20/10/1997
+
+00:30 01:50 03:10 04:30 
+
+
+Ponto: BAIRRO PEDRO MORO - Sábados
+Valido a partir de: 25/10/1997
+
+00:30 01:50 03:10 04:30 
+
+
+Ponto: BAIRRO PEDRO MORO - Domingo / Feriado
+Valido a partir de: 26/10/1997
+
+00:30 01:50 03:10 04:30 
+
+
+Ponto: TERMINAL GUADALUPE - Dias úteis
+Valido a partir de: 20/10/1997
+
+01:10 02:30 03:50 05:05 
+
+
+Ponto: TERMINAL GUADALUPE - Sábados
+Valido a partir de: 25/10/1997
+
+01:10 02:30 03:50 05:05 
+
+
+Ponto: TERMINAL GUADALUPE - Domingo / Feriado
+Valido a partir de: 26/10/1997
+
+01:10 02:30 03:50 05:05 
+
+

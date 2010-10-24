@@ -1,0 +1,54 @@
+Ponto: ESTACAO TUBO CIC NORTE - Dias úteis
+Valido a partir de: 11/12/2006
+
+01:30 02:25 03:25 04:25 
+
+
+Ponto: ESTACAO TUBO CIC NORTE - Sábados
+Valido a partir de: 09/12/2006
+
+01:30 02:25 03:25 04:25 
+
+
+Ponto: ESTACAO TUBO CIC NORTE - Domingo / Feriado
+Valido a partir de: 10/12/2006
+
+01:30 02:25 03:25 04:25 
+
+
+Ponto: PRACA RUI BARBOSA CHEGADA - Dias úteis
+Valido a partir de: 11/12/2006
+
+01:00 01:50 02:50 03:50 04:50 
+
+
+Ponto: PRACA RUI BARBOSA CHEGADA - Sábados
+Valido a partir de: 09/12/2006
+
+01:00 01:50 02:50 03:50 04:50 
+
+
+Ponto: PRACA RUI BARBOSA CHEGADA - Domingo / Feriado
+Valido a partir de: 10/12/2006
+
+01:00 01:50 02:50 03:50 04:50 
+
+
+Ponto: PRACA RUI BARBOSA SAIDA - Dias úteis
+Valido a partir de: 11/12/2006
+
+01:10 02:00 03:00 04:00 05:00 
+
+
+Ponto: PRACA RUI BARBOSA SAIDA - Sábados
+Valido a partir de: 09/12/2006
+
+01:10 02:00 03:00 04:00 05:00 
+
+
+Ponto: PRACA RUI BARBOSA SAIDA - Domingo / Feriado
+Valido a partir de: 10/12/2006
+
+01:10 02:00 03:00 04:00 05:00 
+
+

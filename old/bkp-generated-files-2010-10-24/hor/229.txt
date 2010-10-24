@@ -1,0 +1,36 @@
+Ponto: TERMINAL B.VISTA-S.FER.NORONHA - Dias úteis
+Valido a partir de: 03/10/2005
+
+01:10 02:10 03:05 03:55 05:05 
+
+
+Ponto: TERMINAL B.VISTA-S.FER.NORONHA - Sábados
+Valido a partir de: 01/10/2005
+
+01:10 02:10 03:05 03:55 05:05 
+
+
+Ponto: TERMINAL B.VISTA-S.FER.NORONHA - Domingo / Feriado
+Valido a partir de: 02/10/2005
+
+01:10 02:10 03:05 03:55 05:05 
+
+
+Ponto: TERMINAL B.VISTA-SENT.PENHA - Dias úteis
+Valido a partir de: 03/10/2005
+
+01:35 02:35 03:25 04:15 
+
+
+Ponto: TERMINAL B.VISTA-SENT.PENHA - Sábados
+Valido a partir de: 01/10/2005
+
+01:35 02:35 03:25 04:15 
+
+
+Ponto: TERMINAL B.VISTA-SENT.PENHA - Domingo / Feriado
+Valido a partir de: 02/10/2005
+
+01:35 02:35 03:25 04:15 
+
+

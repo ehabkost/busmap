@@ -1,0 +1,42 @@
+Ponto: ESCOLA CENTRO DE DIA - Dias úteis
+Valido a partir de: 26/07/2007
+
+07:20 11:25 
+
+
+Ponto: ESCOLA ECUMENICA - SEDE        - Dias úteis
+Valido a partir de: 26/07/2007
+
+07:05 17:25 
+
+
+Ponto: ESCOLA M.JESUS (SEDE) - Dias úteis
+Valido a partir de: 26/07/2007
+
+07:10 11:10 13:00 17:05 
+
+
+Ponto: ESCOLA M.JESUS (SUB-SEDE) - Dias úteis
+Valido a partir de: 26/07/2007
+
+07:30 11:35 13:25 17:35 
+
+
+Ponto: ESCOLA NABIL TACLA (SEDE) - Dias úteis
+Valido a partir de: 26/07/2007
+
+07:25 11:20 13:20 17:20 
+
+
+Ponto: ESCOLA SAO CAMILO - Dias úteis
+Valido a partir de: 26/07/2007
+
+10:55 16:50 
+
+
+Ponto: INICIO OPERACAO SITES - BAIRRO - Dias úteis
+Valido a partir de: 26/07/2007
+
+05:50 
+
+

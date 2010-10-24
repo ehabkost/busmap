@@ -1,0 +1,36 @@
+Ponto: RUI BARBOSA/CHEGADA - Dias úteis
+Valido a partir de: 22/10/2007
+
+01:20 02:35 03:35 
+
+
+Ponto: RUI BARBOSA/CHEGADA - Sábados
+Valido a partir de: 30/06/2007
+
+01:20 02:35 03:40 
+
+
+Ponto: RUI BARBOSA/CHEGADA - Domingo / Feriado
+Valido a partir de: 01/07/2007
+
+01:20 02:35 03:40 
+
+
+Ponto: RUI BARBOSA/SAIDA - Dias úteis
+Valido a partir de: 22/10/2007
+
+01:30 02:45 03:40 
+
+
+Ponto: RUI BARBOSA/SAIDA - Sábados
+Valido a partir de: 30/06/2007
+
+01:30 02:45 03:45 
+
+
+Ponto: RUI BARBOSA/SAIDA - Domingo / Feriado
+Valido a partir de: 01/07/2007
+
+01:30 02:45 03:45 
+
+

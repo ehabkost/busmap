@@ -1,0 +1,36 @@
+Ponto: EMPRESA KRAFT - Dias úteis
+Valido a partir de: 09/10/2006
+
+14:55 23:00 
+
+
+Ponto: EMPRESA KRAFT - Sábados
+Valido a partir de: 29/05/2004
+
+06:35 23:00 
+
+
+Ponto: EMPRESA KRAFT - Domingo / Feriado
+Valido a partir de: 30/05/2004
+
+06:35 23:00 
+
+
+Ponto: TERMINAL CIC - Dias úteis
+Valido a partir de: 09/10/2006
+
+23:20 
+
+
+Ponto: TERMINAL CIC - Sábados
+Valido a partir de: 29/05/2004
+
+23:20 
+
+
+Ponto: TERMINAL CIC - Domingo / Feriado
+Valido a partir de: 30/05/2004
+
+23:20 
+
+

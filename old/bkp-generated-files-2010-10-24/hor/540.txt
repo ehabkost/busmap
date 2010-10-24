@@ -1,0 +1,24 @@
+Ponto: EMPRESA KRAFT - Dias úteis
+Valido a partir de: 14/11/2006
+
+06:25 06:35 14:35 14:40 14:50 22:50 22:55 23:00 
+
+
+Ponto: SITIO CERCADO SENTIDO KRAFT - Dias úteis
+Valido a partir de: 14/11/2006
+
+05:10 05:22 13:15 13:23 13:28 21:40 21:45 21:52 
+
+
+Ponto: T.S.CERCADO SENT.BOQUEIRAO - Dias úteis
+Valido a partir de: 14/11/2006
+
+06:45 06:55 14:55 15:00 15:10 23:10 23:15 23:20 
+
+
+Ponto: TERMINAL BOQUEIRAO - Dias úteis
+Valido a partir de: 14/11/2006
+
+05:00 05:10 13:02 13:10 13:15 21:27 21:32 21:39 
+
+

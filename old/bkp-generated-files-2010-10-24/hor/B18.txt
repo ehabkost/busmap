@@ -1,0 +1,38 @@
+Ponto: BAIRRO ROSEIRA - Dias úteis
+Valido a partir de: 29/08/2005
+
+05:00 06:00 07:10 08:30 09:50 11:10 12:40 13:50 15:05 16:05 17:35 19:10 20:30 
+22:00 22:55 23:50 
+
+
+Ponto: BAIRRO ROSEIRA - Sábados
+Valido a partir de: 07/01/2006
+
+05:50 07:10 08:30 09:50 11:10 12:40 13:50 15:00 16:05 17:35 19:10 
+
+
+Ponto: BAIRRO ROSEIRA - Domingo / Feriado
+Valido a partir de: 08/01/2006
+
+05:50 07:20 08:30 09:50 11:10 12:40 13:50 15:00 16:05 17:35 19:10 
+
+
+Ponto: TERMINAL MARACANA - Dias úteis
+Valido a partir de: 29/08/2005
+
+05:30 06:35 07:50 09:10 10:30 12:00 13:25 14:30 15:40 16:50 18:25 20:00 20:55 
+22:27 23:20 24:20 
+
+
+Ponto: TERMINAL MARACANA - Sábados
+Valido a partir de: 07/01/2006
+
+06:35 07:50 09:10 10:30 12:00 13:25 14:25 15:35 16:50 18:25 20:00 
+
+
+Ponto: TERMINAL MARACANA - Domingo / Feriado
+Valido a partir de: 08/01/2006
+
+06:45 07:50 09:10 10:30 12:00 13:25 14:25 15:35 16:50 18:25 20:00 
+
+

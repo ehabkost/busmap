@@ -1,0 +1,54 @@
+Ponto: BAIRRO FERRARIA - Dias úteis
+Valido a partir de: 25/07/1997
+
+02:00 
+
+
+Ponto: BAIRRO FERRARIA - Sábados
+Valido a partir de: 26/07/1997
+
+02:00 
+
+
+Ponto: BAIRRO FERRARIA - Domingo / Feriado
+Valido a partir de: 27/07/1997
+
+02:00 
+
+
+Ponto: T.CAMPO COMPRIDO/CHEGADA - Dias úteis
+Valido a partir de: 25/07/1997
+
+01:25 02:25 
+
+
+Ponto: T.CAMPO COMPRIDO/CHEGADA - Sábados
+Valido a partir de: 26/07/1997
+
+01:25 02:25 
+
+
+Ponto: T.CAMPO COMPRIDO/CHEGADA - Domingo / Feriado
+Valido a partir de: 27/07/1997
+
+01:25 02:25 
+
+
+Ponto: T.CAMPO COMPRIDO/SAIDA - Dias úteis
+Valido a partir de: 25/07/1997
+
+01:35 02:35 
+
+
+Ponto: T.CAMPO COMPRIDO/SAIDA - Sábados
+Valido a partir de: 26/07/1997
+
+01:35 02:35 
+
+
+Ponto: T.CAMPO COMPRIDO/SAIDA - Domingo / Feriado
+Valido a partir de: 27/07/1997
+
+01:35 02:35 
+
+

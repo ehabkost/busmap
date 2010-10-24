@@ -1,0 +1,36 @@
+Ponto: PRACA RUI BARBOSA - Dias úteis
+Valido a partir de: 16/08/2004
+
+24:35 
+
+
+Ponto: PRACA RUI BARBOSA - Sábados
+Valido a partir de: 14/08/2004
+
+24:25 
+
+
+Ponto: PRACA RUI BARBOSA - Domingo / Feriado
+Valido a partir de: 15/08/2004
+
+24:19 
+
+
+Ponto: TERMINAL CAMPO COMPRIDO - Dias úteis
+Valido a partir de: 16/08/2004
+
+24:00 
+
+
+Ponto: TERMINAL CAMPO COMPRIDO - Sábados
+Valido a partir de: 14/08/2004
+
+24:00 
+
+
+Ponto: TERMINAL CAMPO COMPRIDO - Domingo / Feriado
+Valido a partir de: 15/08/2004
+
+23:51 
+
+

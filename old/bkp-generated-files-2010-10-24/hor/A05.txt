@@ -1,0 +1,36 @@
+Ponto: R.BARBOSA-CHEGADA - Dias úteis
+Valido a partir de: 24/09/2007
+
+01:10 02:35 03:55 
+
+
+Ponto: R.BARBOSA-CHEGADA - Sábados
+Valido a partir de: 22/09/2007
+
+01:10 02:35 03:55 
+
+
+Ponto: R.BARBOSA-CHEGADA - Domingo / Feriado
+Valido a partir de: 23/09/2007
+
+01:10 02:35 03:55 
+
+
+Ponto: R.BARBOSA-SAIDA - Dias úteis
+Valido a partir de: 24/09/2007
+
+01:15 02:40 04:00 
+
+
+Ponto: R.BARBOSA-SAIDA - Sábados
+Valido a partir de: 22/09/2007
+
+01:15 02:40 04:00 
+
+
+Ponto: R.BARBOSA-SAIDA - Domingo / Feriado
+Valido a partir de: 23/09/2007
+
+01:15 02:40 04:00 
+
+

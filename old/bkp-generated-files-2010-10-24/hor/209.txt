@@ -1,0 +1,72 @@
+Ponto: CORREIO SENTIDO NORTE - Dias úteis
+Valido a partir de: 15/10/2007
+
+00:50 01:17 02:20 03:00 03:55 04:50 
+
+
+Ponto: CORREIO SENTIDO NORTE - Sábados
+Valido a partir de: 13/10/2007
+
+00:50 01:17 02:20 03:00 03:55 04:50 
+
+
+Ponto: CORREIO SENTIDO NORTE - Domingo / Feriado
+Valido a partir de: 12/10/2007
+
+00:50 01:17 02:20 03:00 03:55 04:50 
+
+
+Ponto: CORREIO SENTIDO SUL - Dias úteis
+Valido a partir de: 15/10/2007
+
+00:30 01:30 01:57 02:57 03:55 04:45 
+
+
+Ponto: CORREIO SENTIDO SUL - Sábados
+Valido a partir de: 13/10/2007
+
+00:30 01:30 01:57 02:57 03:55 04:45 
+
+
+Ponto: CORREIO SENTIDO SUL - Domingo / Feriado
+Valido a partir de: 12/10/2007
+
+00:30 01:30 01:57 02:57 03:55 04:45 
+
+
+Ponto: TERMINAL CAPAO RASO - Dias úteis
+Valido a partir de: 15/10/2007
+
+00:30 00:55 01:55 02:30 03:30 04:20 
+
+
+Ponto: TERMINAL CAPAO RASO - Sábados
+Valido a partir de: 13/10/2007
+
+00:30 00:55 01:55 02:30 03:30 04:20 
+
+
+Ponto: TERMINAL CAPAO RASO - Domingo / Feriado
+Valido a partir de: 12/10/2007
+
+00:30 00:55 01:55 02:30 03:30 04:20 
+
+
+Ponto: TERMINAL SANTA CANDIDA - Dias úteis
+Valido a partir de: 15/10/2007
+
+00:10 01:10 01:37 02:40 03:30 04:20 
+
+
+Ponto: TERMINAL SANTA CANDIDA - Sábados
+Valido a partir de: 13/10/2007
+
+00:10 01:10 01:37 02:40 03:30 04:20 
+
+
+Ponto: TERMINAL SANTA CANDIDA - Domingo / Feriado
+Valido a partir de: 12/10/2007
+
+00:10 01:10 01:37 02:40 03:30 04:20 
+
+

@@ -1,0 +1,36 @@
+Ponto: PRACA RUI BARBOSA/CHEGADA - Dias úteis
+Valido a partir de: 09/02/2004
+
+00:55 01:50 02:50 03:50 
+
+
+Ponto: PRACA RUI BARBOSA/CHEGADA - Sábados
+Valido a partir de: 14/02/2004
+
+00:55 01:50 02:50 03:50 
+
+
+Ponto: PRACA RUI BARBOSA/CHEGADA - Domingo / Feriado
+Valido a partir de: 15/02/2004
+
+00:55 01:50 02:50 03:50 
+
+
+Ponto: PRACA RUI BARBOSA/SAIDA - Dias úteis
+Valido a partir de: 09/02/2004
+
+01:05 02:00 03:00 04:05 
+
+
+Ponto: PRACA RUI BARBOSA/SAIDA - Sábados
+Valido a partir de: 14/02/2004
+
+01:05 02:00 03:00 04:05 
+
+
+Ponto: PRACA RUI BARBOSA/SAIDA - Domingo / Feriado
+Valido a partir de: 15/02/2004
+
+01:05 02:00 03:00 04:05 
+
+

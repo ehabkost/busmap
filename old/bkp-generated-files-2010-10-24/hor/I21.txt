@@ -1,0 +1,36 @@
+Ponto: AGUDOS DO SUL - Dias úteis
+Valido a partir de: 18/09/2006
+
+05:50 12:30 
+
+
+Ponto: AGUDOS DO SUL - Sábados
+Valido a partir de: 01/09/2001
+
+07:00 09:50 18:00 
+
+
+Ponto: AGUDOS DO SUL - Domingo / Feriado
+Valido a partir de: 06/06/2004
+
+18:00 
+
+
+Ponto: TERMINAL FAZENDA RIO GRANDE - Dias úteis
+Valido a partir de: 18/09/2006
+
+07:10 11:00 13:50 19:00 
+
+
+Ponto: TERMINAL FAZENDA RIO GRANDE - Sábados
+Valido a partir de: 01/09/2001
+
+08:30 19:00 
+
+
+Ponto: TERMINAL FAZENDA RIO GRANDE - Domingo / Feriado
+Valido a partir de: 06/06/2004
+
+19:00 
+
+
