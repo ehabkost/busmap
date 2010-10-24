@@ -5,6 +5,7 @@ import logging
 import pickle
 
 from busmap.urbsweb import lista_linhas
+from busmap.db import Database
 
 logger = logging.getLogger('busmap.urbsweb.mapa')
 dbg = logger.debug
@@ -85,19 +86,12 @@ if __name__ == '__main__':
     out = sys.argv[2]
     tipolinha = sys.argv[3]
 
-    if os.path.exists(persist):
-        cache = pickle.load(open(persist, 'r'))
-    else:
-        cache = {}
+    db = Database('sqlite:///%s' % (persist))
 
+    db.create_tables()
 
-    ckey = 'linhas.%s' % (tipolinha)
-    if cache.has_key(ckey):
-        linhas = cache[ckey]
-    else:
-        linhas = list(lista_linhas(tipolinha))
-        cache[ckey] = linhas
-    pickle.dump(cache, open(persist, 'w'))
+    linhas = db.check_keyval('lista_linhas.%s' % (tipolinha),
+            lambda: list(lista_linhas(tipolinha)))
 
     mf = MapFetcher()
     for cod,nome in linhas:

@@ -1,5 +1,93 @@
+import pickle
+
+from sqlalchemy.types import BLOB
+from sqlalchemy import create_engine, Table, Column, Integer, String, MetaData, ForeignKey, UniqueConstraint
+from sqlalchemy.exc import OperationalError
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import relation, backref, sessionmaker
+from sqlalchemy.orm.exc import NoResultFound
+
+import logging
+logger = logging.getLogger('busmap.urbsweb.mapa')
+dbg = logger.debug
+
+
+Base = declarative_base()
+
+class MiscKeyVal(Base):
+    """Useful for simple key->value storage
+
+    Don't abuse it. Use just for quickly testing stuff
+    """
+    __tablename__ = 'misc_keyval'
+
+    key = Column(String, primary_key=True)
+    type = Column(String) # a type, to allow easier filtering
+    value = Column(BLOB)
+
+
+
+class Database:
+    def __init__(self, url):
+        self.engine = create_engine(url)
+        self.session = sessionmaker(bind=self.engine)()
+
+    def create_tables(self):
+        Base.metadata.create_all(self.engine)
+
+    # session shortcuts:
+    def add(self, *args):
+        return self.session.add(*args)
+    def commit(self):
+        return self.session.commit()
+    def query(self, *a, **kw):
+        return self.session.query(*a, **kw)
+
+
+    # Misc key/val funcs:
+    def _put_keyval(self, type, key, value):
+        dbg('storing keyval: type: %r, key: %r, value: %r', type, key, value)
+        kv = MiscKeyVal(key=key, type=type, value=value)
+        self.add(kv)
+        self.commit()
+        return kv
+
+    def put_keyval(self, key, obj):
+        val = pickle.dumps(obj)
+        type = key.split('.')[0]
+        self._put_keyval(type, key, val)
+
+    def _get_keyval(self, key, default=None):
+        dbg('fetching keyval: key: %r', key)
+        kv = self.query(MiscKeyVal).filter_by(key=key).first()
+        if kv is not None:
+            dbg('keyval found: %r', kv)
+            return kv.value
+        dbg('keyval not found')
+        return default
+
+    def get_keyval(self, key, default=None):
+        v = self._get_keyval(key)
+        if v is None:
+            return default
+
+        obj = pickle.loads(str(v))
+        return obj
+
+    def check_keyval(self, key, fn):
+        v = self.get_keyval(key)
+        if v is None:
+            v = fn()
+            self.put_keyval(key, v)
+        return v
+
+### OLD DEPRECATED DB CODE BEGIN
+
+### I reinvented the wheel. I will use sqlalchemy instead
+
 import dbutil.db
 from dbutil.defs import *
+
 
 def new_db(**kwargs):
 	return dbutil.db.new_dbsession(kwargs)
@@ -80,3 +168,5 @@ if __name__ == '__main__':
 	c = dbutil.creator.DatabaseCreator(db, destruct)
 	c.prepare()
 	create_tables(c)
+
+### OLD DEPRECATED DB CODE END
