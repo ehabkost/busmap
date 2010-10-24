@@ -44,11 +44,20 @@ class Database:
         return self.session.query(*a, **kw)
 
 
+    def _keyval_query(self, key):
+        return self.query(MiscKeyVal).filter_by(key=key)
+
     # Misc key/val funcs:
     def _put_keyval(self, type, key, value):
         dbg('storing keyval: type: %r, key: %r, value: %r', type, key, value)
-        kv = MiscKeyVal(key=key, type=type, value=value)
-        self.add(kv)
+        q = self._keyval_query(key)
+        existing = q.first()
+        if existing is not None:
+            kv = existing
+        else:
+            kv = MiscKeyVal(key=key, type=type)
+            self.add(kv)
+        kv.value = value
         self.commit()
         return kv
 
@@ -59,12 +68,15 @@ class Database:
 
     def _get_keyval(self, key, default=None):
         dbg('fetching keyval: key: %r', key)
-        kv = self.query(MiscKeyVal).filter_by(key=key).first()
+        kv = self._keyval_query(key).first()
         if kv is not None:
             dbg('keyval found: %r', kv)
             return kv.value
         dbg('keyval not found')
         return default
+
+    def has_keyval(self, key):
+        return self._keyval_query(key).count() > 0
 
     def get_keyval(self, key, default=None):
         v = self._get_keyval(key)

@@ -21,6 +21,9 @@ INITIAL_CL = ''
 INITIAL_CLICKPAGE = 'http://urbs-web.curitiba.pr.gov.br/centro/mostraclick.asp'
 
 class MapFetcher(object):
+    def __init__(self, db):
+        self.db = db
+
     def coords_url(self, cx, cy, raio, ll, cl, ref):
         args = dict(cx='%f' % (cx),
                     cy='%f' % (cy),
@@ -56,35 +59,25 @@ class MapFetcher(object):
 
         return coord_data,img
 
-    def save_map(self, x, y, raio, linha, dir):
-        coord_file = open(os.path.join(dir, 'coord_data.txt'), 'w')
-        image_file = open(os.path.join(dir, 'image.gif'), 'w')
+    def save_map(self, x, y, raio, linha):
         data,image = self.fetch_map(linha, x, y, raio)
 
-        coord_file.write(data)
-        coord_file.close()
-        image_file.write(image.read())
-        image_file.close()
+        self.db.put_keyval('mapdata.%s.coord_data' % (linha), data)
+        self.db.put_keyval('mapdata.%s.map_image_gif' % (linha), image.read())
 
-    def get_initial_map(self, out_dir, linha):
-        dir = os.path.join(out_dir, 'mapdata/%s/initial' % (linha))
-        done = os.path.join(dir, 'done')
-
-        if os.path.exists(done):
-            dbg('initial map for %s already fetched', linha)
+    def get_initial_map(self, linha):
+        dbg('getting initial map for: %s', linha)
+        if self.db.has_keyval('mapdata.%s.done' % (linha)):
+            dbg('already on db')
             return
 
-        if not os.path.isdir(dir):
-            os.makedirs(dir)
-
-        self.save_map(0, 0, 250, linha, dir)
-        open(done, 'w').close()
+        self.save_map(0, 0, 250, linha)
+        self.db.put_keyval('mapdata.%s.done' % (linha), True)
 
 if __name__ == '__main__':
     logging.basicConfig(stream=sys.stderr, level=logging.DEBUG)
     persist = sys.argv[1]
-    out = sys.argv[2]
-    tipolinha = sys.argv[3]
+    tipolinha = sys.argv[2]
 
     db = Database('sqlite:///%s' % (persist))
 
@@ -93,7 +86,7 @@ if __name__ == '__main__':
     linhas = db.check_keyval('lista_linhas.%s' % (tipolinha),
             lambda: list(lista_linhas(tipolinha)))
 
-    mf = MapFetcher()
+    mf = MapFetcher(db)
     for cod,nome in linhas:
         dbg('will fetch for %s: %s', cod, nome)
-        mf.get_initial_map(out, cod)
+        mf.get_initial_map(cod)
