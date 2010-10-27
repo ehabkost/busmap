@@ -117,17 +117,19 @@ if __name__ == '__main__':
 
     db.create_tables()
 
-    linhas = db.check_keyval('lista_linhas.%s' % (tipolinha),
-            lambda: list(lista_linhas(tipolinha)))
+    try:
+        linhas = db.check_keyval('lista_linhas.%s' % (tipolinha),
+                lambda: list(lista_linhas(tipolinha)))
 
-    mf = MapFetcher(db)
-    for cod,nome in linhas:
-        dbg('will fetch for %s: %s', cod, nome)
-        mf.get_initial_map(cod)
+        mf = MapFetcher(db)
+        for cod,nome in linhas:
+            dbg('will fetch for %s: %s', cod, nome)
+            mf.get_initial_map(cod)
 
-        r = MapRegion(db, cod, 'initial')
-        r.parse_coord_data()
+            r = MapRegion(db, cod, 'initial')
+            r.parse_coord_data()
 
-        i = r.image()
-        dbg('img size: %r', i.size)
-    db.commit()
+            i = r.image()
+            dbg('img size: %r', i.size)
+    finally:
+        db.commit()
