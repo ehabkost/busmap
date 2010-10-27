@@ -3,6 +3,8 @@ import sys, os
 import urllib, urllib2
 import logging
 import pickle
+import StringIO
+from PIL import Image
 
 from busmap.urbsweb import lista_linhas
 from busmap.db import Database
@@ -19,6 +21,38 @@ INITIAL_Y = 7180000
 INITIAL_RAIO = 17000
 INITIAL_CL = ''
 INITIAL_CLICKPAGE = 'http://urbs-web.curitiba.pr.gov.br/centro/mostraclick.asp'
+
+class MapRegion(object):
+    def __init__(self, db, linha, name):
+        self.db = db
+        self.linha = linha
+        self.name = name
+
+    def _keyval(self, field):
+        return 'mapdata.%s.%s.%s' % (self.linha, self.name, field)
+
+    def val(self, field):
+        """Get a field from a map image
+
+        linha: bus line
+        name: image/region name (set when it is saved)
+        field: field name (e.g. coord_data, map_image_gif)
+        """
+        return self.db.get_keyval(self._keyval(field))
+
+    def set_val(self, field, val):
+        return self.db.put_keyval(self._keyval(field), val)
+
+    def parse_coord_data(self):
+        fields = 'minx','miny','maxx','maxy'
+        data = self.val('coord_data')
+        for field,val in zip(fields, data.split(';')):
+            self.set_val(field, val)
+
+    def image(self):
+        img = self.val('map_image_gif')
+        f = StringIO.StringIO(img)
+        return Image.open(f)
 
 class MapFetcher(object):
     def __init__(self, db):
@@ -59,20 +93,20 @@ class MapFetcher(object):
 
         return coord_data,img
 
-    def save_map(self, x, y, raio, linha):
+    def save_map(self, x, y, raio, linha, name):
         data,image = self.fetch_map(linha, x, y, raio)
 
-        self.db.put_keyval('mapdata.%s.coord_data' % (linha), data)
-        self.db.put_keyval('mapdata.%s.map_image_gif' % (linha), image.read())
+        self.db.put_keyval('mapdata.%s.%s.coord_data' % (linha, name), data)
+        self.db.put_keyval('mapdata.%s.%s.map_image_gif' % (linha, name), image.read())
 
     def get_initial_map(self, linha):
         dbg('getting initial map for: %s', linha)
-        if self.db.has_keyval('mapdata.%s.done' % (linha)):
+        if self.db.has_keyval('mapdata.%s.initial.done' % (linha)):
             dbg('already on db')
             return
 
         self.save_map(0, 0, 250, linha)
-        self.db.put_keyval('mapdata.%s.done' % (linha), True)
+        self.db.put_keyval('mapdata.%s.initial.done' % (linha), True)
 
 if __name__ == '__main__':
     logging.basicConfig(stream=sys.stderr, level=logging.DEBUG)
@@ -90,3 +124,10 @@ if __name__ == '__main__':
     for cod,nome in linhas:
         dbg('will fetch for %s: %s', cod, nome)
         mf.get_initial_map(cod)
+
+        r = MapRegion(db, cod, 'initial')
+        r.parse_coord_data()
+
+        i = r.image()
+        dbg('img size: %r', i.size)
+    db.commit()
