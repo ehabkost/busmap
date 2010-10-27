@@ -1,4 +1,4 @@
-import pickle
+import cPickle as pickle
 
 from sqlalchemy.types import BLOB
 from sqlalchemy import create_engine, Table, Column, Integer, String, MetaData, ForeignKey, UniqueConstraint
@@ -58,7 +58,7 @@ class Database:
             kv = MiscKeyVal(key=key, type=type)
             self.add(kv)
         kv.value = value
-        self.commit()
+        #self.commit()
         return kv
 
     def put_keyval(self, key, obj):
