@@ -105,7 +105,7 @@ class MapFetcher(object):
             dbg('already on db')
             return
 
-        self.save_map(0, 0, 250, linha)
+        self.save_map(0, 0, 250, linha, 'initial')
         self.db.put_keyval('mapdata.%s.initial.done' % (linha), True)
 
 if __name__ == '__main__':
