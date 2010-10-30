@@ -85,7 +85,9 @@ class MapFetcher(object):
         url = self.coords_url(x, y, raio, self.ll, linha, URL_BASE)
         dbg('url: %s', url)
 
-        coord_data = urllib2.urlopen(url).read()
+        c = urllib2.urlopen(url)
+        coord_data = c.read()
+        c.close()
         dbg('coord data: %r', coord_data)
 
         iurl = self.image_url(self.ll)
