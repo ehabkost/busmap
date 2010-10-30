@@ -1,5 +1,5 @@
 
-import sys, os
+import sys, os, random
 import urllib, urllib2
 import logging
 import pickle
@@ -57,6 +57,7 @@ class MapRegion(object):
 class MapFetcher(object):
     def __init__(self, db):
         self.db = db
+        self.ll = random.randint(0, 999999) # our 'session identifier'
 
     def coords_url(self, cx, cy, raio, ll, cl, ref):
         args = dict(cx='%f' % (cx),
@@ -80,16 +81,16 @@ class MapFetcher(object):
         """
         dbg('downloading map data for linha %s', linha)
 
-        ll = 441950 # arbitrary number. I expect to be able to reuse it on multiple requests
-        url = self.coords_url(x, y, raio, ll, linha, URL_BASE)
+        url = self.coords_url(x, y, raio, self.ll, linha, URL_BASE)
         dbg('url: %s', url)
 
         coord_data = urllib2.urlopen(url).read()
         dbg('coord data: %r', coord_data)
 
-        dbg('now will get image from: %s', self.image_url(ll))
+        iurl = self.image_url(self.ll)
+        dbg('now will get image from: %s', iurl)
 
-        img = urllib2.urlopen(self.image_url(ll))
+        img = urllib2.urlopen(iurl)
 
         return coord_data,img
 
