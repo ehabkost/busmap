@@ -47,6 +47,7 @@ class MapRegion(object):
         fields = 'minx','miny','maxx','maxy'
         data = self.val('coord_data')
         for field,val in zip(fields, data.split(';')):
+            val = float(val)
             self.set_val(field, val)
 
     def image(self):
