@@ -7,7 +7,7 @@ import StringIO
 from PIL import Image
 
 from busmap.urbsweb import lista_linhas
-from busmap.db import Database
+#from busmap.db import Database
 
 logger = logging.getLogger('busmap.urbsweb.mapa')
 dbg = logger.debug
@@ -36,7 +36,10 @@ class DataDir:
             return None
         v = f.read()
         if unpickle:
-            v = pickle.loads(v)
+            try:
+                v = pickle.loads(v)
+            except:
+                v = None
         return v
 
     def getfile(self, key):
@@ -50,6 +53,9 @@ class DataDir:
         if pickleit:
             val = pickle.dumps(val)
         path = self._file_for_key(key)
+        dname = os.path.dirname(path)
+        if not os.path.isdir(dname):
+            os.makedirs(dname)
         return open(path, 'w').write(val)
 
 class MapRegion(object):
@@ -59,7 +65,7 @@ class MapRegion(object):
         self.name = name
 
     def _key_for_field(self, field):
-        return 'mapdata.%s.%s.%s' % (self.linha, self.name, field)
+        return 'mapdata/%s/%s/%s' % (self.linha, self.name, field)
 
     def val(self, field, unpickle=True):
         """Get a field from a map image
@@ -88,9 +94,27 @@ class MapRegion(object):
     def height(self):
         return self.val('maxy')-self.val('miny')
 
+    def size(self):
+        return (self.width(), self.height())
+
     def image(self):
         f = self.datadir.getfile(self._key_for_field('map_image.gif'))
         return Image.open(f)
+
+def retry_func(count, fn, *args, **kwargs):
+    failures = 0
+    while failures < count:
+        try:
+            return fn(*args, **kwargs)
+        except KeyboardInterrupt:
+            raise
+        except:
+            failures += 1
+            if failures >= count:
+                raise
+            else:
+                logger.exception("Failure calling: %r(*%r, **%r)",
+                                 fn, args, kwargs)
 
 class MapFetcher(object):
     def __init__(self, datadir):
@@ -135,22 +159,24 @@ class MapFetcher(object):
         return coord_data,img
 
     def save_map(self, x, y, raio, linha, name):
-        data,image = self.fetch_map(linha, x, y, raio)
+        data,image = retry_func(3, self.fetch_map, linha, x, y, raio)
 
-        self.datadir.put('mapdata.%s.%s.coord_data' % (linha, name), data, pickleit=False)
-        self.datadir.put('mapdata.%s.%s.map_image.gif' % (linha, name), image.read(), pickleit=False)
+        r = self.get_mapregion(linha, name)
+        r.set_val('coord_data', data, pickleit=False)
+        r.set_val('map_image.gif', image.read(), pickleit=False)
 
     def get_map_if_missing(self, linha, name, x, y, raio, force=False):
         dbg('getting map[%s] for: %s', name, linha)
-        done = self.datadir.get('mapdata.%s.%s.done' % (linha, name))
+        r = self.get_mapregion(linha, name)
+        done = r.val('done')
         dbg('done? %r', done)
         if done and not force:
             dbg('already on db')
         else:
             self.save_map(x, y, raio, linha, name)
-            self.datadir.put('mapdata.%s.%s.done' % (linha, name), True)
-        r = self.get_mapregion(linha, name)
-        r.parse_coord_data()
+            r.set_val('done', True)
+        if r.val('minx') is None:
+            r.parse_coord_data()
         if r.val('has_busline') is None:
             i = r.image()
             has_bus = self._image_has_busline(i)
@@ -217,7 +243,7 @@ class MapFetcher(object):
                     dbg('fixing raio: %r', raio)
                     raio = MIN_RAIO
                     recursion_level = 0
-                subname = 'submap.%f.%f.%d' % (cx, cy, raio)
+                subname = 'submaps/%d/%f.%f' % (raio, cx, cy)
                 dbg('subname: %r', subname)
                 sr = self.get_map_if_missing(linha, subname, cx, cy, raio)
                 dbg('subregion size: %r, %r', sr.width(), sr.height())
@@ -232,12 +258,23 @@ class MapFetcher(object):
 
 
 if __name__ == '__main__':
-    logging.basicConfig(stream=sys.stderr, level=logging.DEBUG)
-    datapath = sys.argv[1]
-    tipolinha = sys.argv[2]
+    loglevel = logging.INFO
+    args = []
+    i = 0
+    while i < len(sys.argv[1:]):
+        arg = sys.argv[1+i]
+        if arg == '-d':
+            loglevel = logging.DEBUG
+        else:
+            args.append(arg)
+        i += 1
+
+    logging.basicConfig(stream=sys.stderr, level=loglevel)
+    datapath = args[0]
+    tipolinha = args[1]
     linha = None
-    if len(sys.argv) > 3:
-        linha = sys.argv[3]
+    if len(args) > 2:
+        linha = args[2]
 
     datadir = DataDir(datapath)
 
@@ -247,15 +284,32 @@ if __name__ == '__main__':
         linhas = list(lista_linhas(tipolinha))
         datadir.put(linhaskey, linhas)
 
+    failures = 0
     mf = MapFetcher(datadir)
     for cod,nome in linhas:
         if linha is not None and linha <> cod:
             continue
-        dbg('will fetch for %s: %s', cod, nome)
-        r = mf.get_initial_map(cod)
+        logger.info('will fetch for %s: %s', cod, nome)
+        try:
+            if datadir.get('linha/%s/all_submaps_fetched' % (cod)):
+                logger.info("linha %s already fetched. skipping", cod)
+                continue
+            r = mf.get_initial_map(cod)
 
-        regions = [r]
-        mf.fetch_subregions(r, 5, regions)
+            regions = [r]
+            mf.fetch_subregions(r, 5, regions)
 
-        rnames = [r.name for r in regions]
-        datadir.put('linha.%s.all_region_names' % (cod), rnames)
+            rnames = [r.name for r in regions]
+            datadir.put('linha/%s/all_region_names' % (cod), rnames)
+            datadir.put('linha/%s/all_submaps_fetched' % (cod), True)
+            logger.info('fetched: %s %s', cod, nome)
+            failures = 0 # success => reset failure count
+        except KeyboardInterrupt:
+            raise
+        except:
+            failures += 1
+            if failures > 3:
+                raise
+            else:
+                logger.exception("FAILURE fetching %s", cod)
+
