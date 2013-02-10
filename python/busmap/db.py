@@ -1,4 +1,5 @@
 import cPickle as pickle
+import os, sys
 
 from sqlalchemy.types import BLOB
 from sqlalchemy import create_engine, Table, Column, Integer, String, MetaData, ForeignKey, UniqueConstraint
@@ -92,6 +93,25 @@ class Database:
             v = fn()
             self.put_keyval(key, v)
         return v
+
+    def dump_keyvals(self, outdir, pattern=None, unpickle=True):
+        q = self.query(MiscKeyVal)
+        if pattern:
+            q = q.filter_by(MiscKeyVal.key.like(pattern))
+        for kv in q:
+            path = os.path.join(outdir, kv.key)
+            v = kv.value
+            if unpickle:
+                d = pickle.loads(v)
+                if type(d) is str:
+                    v = d
+            print repr(path), len(v)
+            open(path, 'w').write(v)
+
+if __name__ == '__main__':
+    import sys
+    db = Database(sys.argv[1])
+    db.dump_keyvals(sys.argv[2], sys.argv[3])
 
 ### OLD DEPRECATED DB CODE BEGIN
 
