@@ -9,32 +9,18 @@ dbg = logger.debug
 warn = logger.warning
 info = logger.info
 
-def main(argv):
-    loglevel = logging.INFO
-    args = []
-    i = 0
-    while i < len(sys.argv[1:]):
-        arg = sys.argv[1+i]
-        if arg == '-d':
-            loglevel = logging.DEBUG
-        else:
-            args.append(arg)
-        i += 1
+BOTTOM_CROP = 17
 
-    logging.basicConfig(stream=sys.stderr, level=loglevel)
-    dirpath = args[0]
-    d = DataDir(dirpath)
-    ltype = args[1]
-    linha = args[2]
+def combine_map_images(ddir, linha):
 
     # region-size of the largest image we could imagine building:
     LARGE_IMAGE = 10000.0
-    rnames = d.get('linha.%s.all_region_names' % (linha))
+    rnames = ddir.get('linha/%s/all_region_names' % (linha))
 
     dbg('gathering image sizes...')
     persize = {}
     for rname in rnames:
-        r = MapRegion(d, linha, rname)
+        r = MapRegion(ddir, linha, rname)
 
         img = r.image()
         isize = img.size
@@ -65,7 +51,7 @@ def main(argv):
     dbg('region size for each image: %r', region_for_img)
     def regions():
         for rname in rnames:
-            yield MapRegion(d, linha, rname)
+            yield MapRegion(ddir, linha, rname)
 
     minx = min([r.val('minx') for r in regions()])
     miny = min([r.val('miny') for r in regions()])
@@ -80,16 +66,38 @@ def main(argv):
     img = Image.new('RGB', image_pixel_size)
     for r in regions():
         subimg = r.image()
+        #XXX: hack to avoid the white rectangle over the box
+        cropimg = subimg.crop((0, 0, subimg.size[0], subimg.size[1]-BOTTOM_CROP))
         # 0,0 (top-left corner) is minx,maxx
         dbg('ranges of image are: %r-%r (%r), %r-%r (%r)', r.val('minx'), r.val('maxx'), r.width(), r.val('miny'), r.val('maxy'), r.height())
         region_offset = (r.val('minx')-minx, maxy-r.val('maxy'))
         dbg('region offset is: %r', region_offset)
         pixel_offset = tuple([int(region_offset[i]/region_per_pixel[i]) for i in (0,1)])
         dbg('pasting at pixel offset: %r', pixel_offset)
-        img.paste(subimg, pixel_offset)
-    fname = os.path.join(dirpath, '%s-full.png' % (linha))
+        img.paste(cropimg, pixel_offset)
+    fname = ddir._file_for_key('linha/%s/full_map.png' % (linha))
+    dbg('saving to: %r', fname)
     img.save(fname, 'png')
     info('saved to: %s', fname)
+
+def main(argv):
+    loglevel = logging.INFO
+    args = []
+    i = 0
+    while i < len(sys.argv[1:]):
+        arg = sys.argv[1+i]
+        if arg == '-d':
+            loglevel = logging.DEBUG
+        else:
+            args.append(arg)
+        i += 1
+
+    logging.basicConfig(stream=sys.stderr, level=loglevel)
+    dirpath = args[0]
+    ddir = DataDir(dirpath)
+    linha = args[1]
+
+    combine_map_images(ddir, linha)
 
 if __name__ == '__main__':
     sys.exit(main(sys.argv))

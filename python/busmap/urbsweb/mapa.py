@@ -26,11 +26,15 @@ INITIAL_CLICKPAGE = 'http://urbs-web.curitiba.pr.gov.br/centro/mostraclick.asp'
 class DataDir:
     def __init__(self, path):
         self.path = path
+        self._cache = {}
 
     def _file_for_key(self, key):
         return os.path.join(self.path, key)
 
     def get(self, key, unpickle=True):
+        #dbg('DataDir.get: %r', key)
+        if key in self._cache:
+            return self._cache[key]
         f = self.getfile(key)
         if f is None:
             return None
@@ -40,16 +44,18 @@ class DataDir:
                 v = pickle.loads(v)
             except:
                 v = None
+        self._cache[key] = v
         return v
 
-    def getfile(self, key):
-        """Open value as file, for reading"""
+    def getfile(self, key, mode='r'):
+        """Open value as file"""
         path = self._file_for_key(key)
-        if not os.path.exists(path):
+        if 'r' in mode and not os.path.exists(path):
             return None
-        return open(path, 'r')
+        return open(path, mode)
 
     def put(self, key, val, pickleit=True):
+        self._cache[key] = val
         if pickleit:
             val = pickle.dumps(val)
         path = self._file_for_key(key)
@@ -65,7 +71,9 @@ class MapRegion(object):
         self.name = name
 
     def _key_for_field(self, field):
-        return 'mapdata/%s/%s/%s' % (self.linha, self.name, field)
+        r = 'mapdata/%s/%s/%s' % (self.linha, self.name, field)
+        #dbg('key for field: %r -> %r', field, r)
+        return r
 
     def val(self, field, unpickle=True):
         """Get a field from a map image
@@ -97,8 +105,13 @@ class MapRegion(object):
     def size(self):
         return (self.width(), self.height())
 
+    def imagefile(self, mode='rb'):
+        return self.datadir.getfile(self._key_for_field('map_image.gif'), mode)
+
     def image(self):
-        f = self.datadir.getfile(self._key_for_field('map_image.gif'))
+        f = self.imagefile('rb')
+        if f is None:
+            return None
         return Image.open(f)
 
 def retry_func(count, fn, *args, **kwargs):
@@ -163,13 +176,12 @@ class MapFetcher(object):
 
         r = self.get_mapregion(linha, name)
         r.set_val('coord_data', data, pickleit=False)
-        r.set_val('map_image.gif', image.read(), pickleit=False)
+        r.imagefile('wb').write(image.read())
 
     def get_map_if_missing(self, linha, name, x, y, raio, force=False):
         dbg('getting map[%s] for: %s', name, linha)
         r = self.get_mapregion(linha, name)
         done = r.val('done')
-        dbg('done? %r', done)
         if done and not force:
             dbg('already on db')
         else:
